@@ -50,3 +50,49 @@ button {
 #button-cancelar {
     background-color: red;
 }
+
+ul {
+    display: flex;
+    /*elementos ficam um do lado do outro*/
+    flex-wrap: wrap;
+    /*chega no limete, ocupando toda a tela, passa pra baixo*/
+}
+
+ul li {
+    max-width: 25%;
+    /*fica 4 imagens em uma fileira*/
+    list-style: none;
+    /*remove bolinas de lista*/
+    position: relative;
+    max-height: 280px;
+    overflow-y: hidden;
+    /*toda imagem que passar do max height vai ser omitida*/
+}
+
+ul li img {
+    width: 100%;
+    /*imagem ocupar 100% do espaço*/
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    /*sumir com o link que estava apaecendo na foto*/
+    transition: all ease .5s;
+    /*a transiçao do link fica mais suave*/
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+    /*quando colocar o cursor em cima faz com que o link apareça*/
+}
